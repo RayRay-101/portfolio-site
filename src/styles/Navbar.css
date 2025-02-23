@@ -1,0 +1,71 @@
+.Navbar {
+    /* position:fixed; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    /* background-color: #ffffff; */
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+    
+}
+
+.Navlogo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.Navlogo img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+.Navlogo p {
+    font-size: 22px;
+    font-weight:500;
+    color: #333;
+}
+
+.Navlinks ul{
+    display: flex;
+    gap: 25px;
+    list-style-type: none;
+}
+
+.Navlinks ul li {
+    position: relative;
+}
+.Navlinks ul li a {
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 500;
+    color: #333;
+    transition: color 0.3s ease-in-out;
+}
+
+
+
+/* Underline Effect */
+.Navlinks ul li a::before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: black;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease-in-out;
+}
+/* ✅ Persistent Underline for Active Link */
+.Navlinks ul li a.active::before {
+    width: 100%;
+}
+
+.Navlinks ul li a.active:hover {
+    text-decoration: none;
+}
+
+.Navlinks ul li a:hover {
+    text-decoration: line-through;
+}
