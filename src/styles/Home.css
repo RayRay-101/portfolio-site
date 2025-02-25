@@ -1,17 +1,17 @@
 .Homepage {
-    margin-top: -10rem;
+    margin-top: -5rem;
 }
 .Home {
     display: flex;
     justify-content: center;
-    gap: 30rem;
+    gap: 20rem;
     align-items: center;
     height: 100vh;
     background-color: #f8f9fa;
     /* font-size: 24px; */
     font-weight: bold;
     color: #333;
-    margin-right: 70px;
+    /* margin-right: 70px; */
 }
 .HomeText {
     /* width: 100%; */
@@ -20,9 +20,9 @@
     color: #333;
     position: relative;
 }
-.HomeText p{
+/* .HomeText p{
 
-}
+} */
 .HomeImage {
     /* width: 100%; */
     display: flex;
@@ -48,7 +48,68 @@
         transform: translateY(0);
     }
 }
-
+.HomeText button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 2rem 0;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .HomeText button li {
+    list-style-type: none;
+  }
+  
+  .HomeText button a {
+    display: inline-block;
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    text-decoration: none;
+    letter-spacing: 1px;
+    border: 2px solid #333;
+    border-radius: 4px;
+    background-color: transparent;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  }
+  
+  /* Black background effect on hover */
+  .HomeText button a:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s cubic-bezier(0.7, 0, 0.3, 1);
+    z-index: -1;
+  }
+  
+  .HomeText button a:hover {
+    color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+  }
+  
+  .HomeText button a:hover:before {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  
+  /* Active/clicked state */
+  .HomeText button a:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
 
 .vertical {
     position: absolute;
@@ -83,7 +144,8 @@
     gap: 10px;
 }
 .Scroll p {
-  animation: bounceFade 1.5s infinite ease-in-out;
+  animation: bounceFade 3s infinite ease-in-out;
+  font-size: 24px;
 }
 @keyframes bounceFade {
     0% {
@@ -113,3 +175,276 @@
     background-color: #999;
     border: none;
 }
+
+/* Global Reset */
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f9f9f9;
+    color: #333;
+  }
+  
+  /* Portfolio Container */
+  .Portfolio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+  }
+  
+  /* Projects Section */
+  .Projects {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .Projects h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #222;
+  }
+  
+  .Projects p {
+    font-size: 18px;
+    color: #555;
+  }
+  
+  
+  /* Global styles */
+:root {
+    --primary-color: #333;
+    --accent-color: #0066cc;
+    --bg-color: #fafafa;
+    --text-color: #333;
+    --light-gray: #e0e0e0;
+    --transition: all 0.3s ease;
+  }
+  
+  body {
+    font-family: 'Inter', 'Helvetica Neue', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Contact section */
+  .Contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 2rem;
+    text-align: center;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    margin: 5rem auto;
+    max-width: 700px;
+  }
+  
+  .Contact img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    border: 4px solid white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .Contact h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 2rem 0;
+    color: var(--primary-color);
+  }
+.Contact input {
+    
+}
+.Contact p {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    color: #333;
+    margin: 2rem 0 1.5rem;
+}
+
+
+.Contact button {
+      margin: 2rem 0;
+        padding: 8px 16px;
+        border: 1px solid #333;
+        border-radius: 4px;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        text-decoration: none;
+    }
+    
+    .Contact button::before {
+        display: none; /* Remove the underline effect for resume */
+    }
+    
+    .Contact button:hover {
+        color: white;
+        text-decoration: none;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        transform: translateY(-2px);
+    }
+    
+    /* Black background effect on hover */
+    .Contact button::after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #333;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.3s ease-out;
+    }
+    
+    .Contact button:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+  
+ 
+  /* Input styling to match the sleek design */
+input[type="text"] {
+    width: 100%;
+    max-width: 400px;
+    padding: 0.8rem 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    font-size: 0.95rem;
+    transition: var(--transition);
+    box-shadow: 0 2px 4px rgba(27, 19, 19, 0.03);
+    background-color: white;
+    color: var(--text-color);
+    margin: 0.5rem 0;
+  }
+  
+  input[type="text"]:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.15);
+  }
+  
+  input[type="text"]::placeholder {
+    color: #aaa;
+    font-weight: 400;
+  }
+  
+  /* For a sleeker form layout, add this to your existing CSS */
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  /* If the input is inside the Contact section, you might want to add this */
+  .Contact input[type="text"] {
+    margin: 1rem 0;
+  }
+  /* Footer section */
+  .Footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    background-color: white;
+    border-top: 1px solid var(--light-gray);
+    margin-top: 3rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .Footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  .Footer .one {
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  .Footer .two {
+    flex: 1;
+    text-align: center;
+    min-width: 200px;
+  }
+  
+  .Footer .two p::before {
+    content: "❤️";
+    margin-right: 5px;
+  }
+  
+  .Footer .three {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1.5rem;
+    min-width: 200px;
+  }
+  
+  .Footer .three a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    position: relative;
+  }
+  
+  .Footer .three a:hover {
+    color: #0055aa;
+  }
+  
+  .Footer .three a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: var(--transition);
+  }
+  
+  .Footer .three a:hover::after {
+    width: 100%;
+  }
+  
+  /* Media queries for responsiveness */
+  @media (max-width: 768px) {
+    .Footer {
+      flex-direction: column;
+      text-align: center;
+      gap: 1.5rem;
+    }
+    
+    .Footer .one, 
+    .Footer .two, 
+    .Footer .three {
+      width: 100%;
+      justify-content: center;
+    }
+    
+    .Contact {
+      padding: 3rem 1rem;
+    }
+  }
+  
+  

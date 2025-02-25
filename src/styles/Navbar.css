@@ -69,3 +69,45 @@
 .Navlinks ul li a:hover {
     text-decoration: line-through;
 }
+/* Special styling for the Resume link - Using a more specific selector */
+.Navlinks ul li:last-child a {
+    padding: 8px 16px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    text-decoration: none;
+}
+
+.Navlinks ul li:last-child a::before {
+    display: none; /* Remove the underline effect for resume */
+}
+
+.Navlinks ul li:last-child a:hover {
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Black background effect on hover */
+.Navlinks ul li:last-child a::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease-out;
+}
+
+.Navlinks ul li:last-child a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
