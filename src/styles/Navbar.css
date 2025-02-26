@@ -67,7 +67,7 @@
 }
 
 .Navlinks ul li a:hover {
-    text-decoration: line-through;
+    /* text-decoration: line-through; */
 }
 /* Special styling for the Resume link - Using a more specific selector */
 .Navlinks ul li:last-child a {
