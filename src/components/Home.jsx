@@ -1,7 +1,6 @@
 import React from 'react'
 import "../styles/Home.css"
 import Myself from "../assets/myself.png"
-import Inpic from "../assets/inpic.jpg"
 import react from "../assets/React.png"
 import tailwind from "../assets/tailwind.png"
 import javascript from "../assets/javascript.png"
@@ -10,12 +9,12 @@ import node from "../assets/node.png"
 import mongo from "../assets/mongo.png"
 import redux from "../assets/redux.png"
 import express from "../assets/express.png"
-import BubbleAnimation from './BubbleAnimation'
+// import BubbleAnimation from "./components/BubbleAnimation.jsx"
 
 const Home = () => {
   return (
     <div className='Homepage'>
-      <BubbleAnimation />
+      {/* <BubbleAnimation /> */}
 
       <div className='Home'>
         <div className='HomeText'>
@@ -67,30 +66,7 @@ const Home = () => {
         <p>how to show and animate properly</p>
       </div>
 
-      <div className='Contact'>
-        <img src={Inpic} alt="#open to work" />
-        <h1>I'm available to Work</h1>
-        <p>CONTACT ME</p>
-        <input type="text" />
-        <button>
-          Get In Touch
-        </button>
-      </div>
-
-      <div className='Footer'>
-        <div className='one'>
-          <p>&copy; 2024 All Rights Reserved</p>
-        </div>
-
-        <div className='two'>
-          <p>Built with React.</p>
-        </div>
-
-        <div className='three'>
-          <a href="">LinkedIn /</a>
-          <a href="">Github</a>
-        </div>
-      </div>
+      
 
     </div>
   

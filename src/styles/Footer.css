@@ -1,0 +1,88 @@
+.Footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    background-color: white;
+    border-top: 1px solid var(--light-gray);
+    margin-top: 3rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .Footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  .Footer .one {
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  .Footer .two {
+    flex: 1;
+    text-align: center;
+    min-width: 200px;
+  }
+  
+  .Footer .two p::before {
+    content: "❤️";
+    margin-right: 5px;
+  }
+  
+  .Footer .three {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1.5rem;
+    min-width: 200px;
+  }
+  
+  .Footer .three a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    position: relative;
+  }
+  
+  .Footer .three a:hover {
+    color: #0055aa;
+  }
+  
+  .Footer .three a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: var(--transition);
+  }
+  
+  .Footer .three a:hover::after {
+    width: 100%;
+  }
+  
+  /* Media queries for responsiveness */
+  @media (max-width: 768px) {
+    .Footer {
+      flex-direction: column;
+      text-align: center;
+      gap: 1.5rem;
+    }
+    
+    .Footer .one, 
+    .Footer .two, 
+    .Footer .three {
+      width: 100%;
+      justify-content: center;
+    }
+    
+    
+  }
+  
+  
