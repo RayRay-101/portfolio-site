@@ -13,17 +13,27 @@
     width: 70%;
     text-align: left;
     margin-left: -14rem;
+    margin-top: -15rem;
 
 }
 .aboutupper .myself {
-    margin-left: 15rem;
+    margin-left: 6rem;
     margin-top: 2rem;
+    width:70%;
 }
 .aboutupper p{
     font-size: 1.5rem;
-    width:70%;
     
 
+}
+.aboutupper .dot {
+    display: inline-block; 
+  width: 10px;  
+  height: 10px;
+  background-color: #797878; 
+  border-radius: 50%; 
+  margin: 0 5px;   
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 .line {
     position: absolute;
@@ -97,7 +107,7 @@
         align-items: center;
         justify-content: space-around;
         width: 30%;
-        margin-top: -20rem;
+        /* margin-top: -20rem; */
         
     }
     
@@ -105,17 +115,60 @@
         border-radius: 10rem;
     }
     
-  .aboutlower .skills {
-    display: flex;
-    flex-wrap: wrap;
+    .aboutlower .skills {
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;        
+        padding: 2.5rem;
 
-  }
-  .aboutlower .skills h1 {
-    height: 3rem;
-    width: 20rem;
-    color: white;
-    background-color: #111;
-    text-align: center;
-    border-radius: 1rem;
-
-  }
+      }
+      
+      .aboutlower .skills .skills-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 5rem;
+        align-items: flex-start;
+        /* max-width: 600px; */
+        margin: auto;
+        padding: 2.5rem;
+      }
+      
+      .aboutlower .skills .skills-container .frontend, 
+      .aboutlower .skills .skills-container .backend {
+        /* width: 45%; */
+      }
+      
+      .aboutlower .skills .skills-container ul {
+        list-style: none;
+        padding: 0;
+      }
+      
+      .aboutlower .skills .skills-container p {
+        font-weight: bold;
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+      }
+      
+      .aboutlower .skills .skills-container li {
+        font-style: italic;
+        background: #f5f5f5;
+        padding: 5px;
+        margin: 3px 0;
+        border-radius: 5px;
+      }
+      .aboutlower .skills .skills-container li:hover {
+        font-size: ;
+        transform: translateX(1.5);
+        text-decoration: line-through;
+      }
+      
+      .aboutlower .skills h1 {
+        height: 3rem;
+        width: 20rem;
+        color: white;
+        background-color: #111;
+        text-align: center;
+        border-radius: 1rem;
+        margin: auto;
+      }
+      

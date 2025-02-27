@@ -19,8 +19,8 @@ const Home = () => {
       <div className='Home'>
         <div className='HomeText'>
           <h1>Hi, <br/>
-          I'm Raymond <span>.</span></h1>
-          <p>I'm a creative web developer <span>.</span></p>
+          I'm Raymond <span className="dot"></span></h1>
+          <p>I'm a creative web developer <span className="dot"></span></p>
           <br />
           <div className='vertical'>
           <p><span>&copy; 2024 Addo Raymond.</span></p>
