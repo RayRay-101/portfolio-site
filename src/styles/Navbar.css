@@ -20,7 +20,9 @@
 .Navlogo img {
     width: 40px;
     height: 40px;
+    border-radius: 20px;
     object-fit: contain;
+    background-color: rgb(196, 195, 195);
 }
 .Navlogo p {
     font-size: 22px;

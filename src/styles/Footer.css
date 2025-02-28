@@ -1,88 +1,87 @@
 .Footer {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     padding: 2rem;
-    background-color: white;
+    background-color: black;
+    color: rgb(238, 236, 236);
     border-top: 1px solid var(--light-gray);
-    margin-top: 3rem;
-    flex-wrap: wrap;
-    gap: 1rem;
   }
+  
   
   .Footer p {
     margin: 0;
-    font-size: 0.9rem;
-    color: #666;
+    font-size: 1rem;
   }
   
-  .Footer .one {
-    flex: 1;
-    min-width: 200px;
-  }
-  
-  .Footer .two {
-    flex: 1;
-    text-align: center;
-    min-width: 200px;
-  }
-  
-  .Footer .two p::before {
-    content: "❤️";
-    margin-right: 5px;
-  }
-  
-  .Footer .three {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-    gap: 1.5rem;
-    min-width: 200px;
-  }
-  
-  .Footer .three a {
-    color: var(--accent-color);
-    text-decoration: none;
-    font-weight: 500;
-    transition: var(--transition);
-    position: relative;
-  }
-  
-  .Footer .three a:hover {
-    color: #0055aa;
-  }
-  
-  .Footer .three a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -4px;
-    left: 0;
-    background-color: var(--accent-color);
-    transition: var(--transition);
-  }
-  
-  .Footer .three a:hover::after {
-    width: 100%;
-  }
-  
-  /* Media queries for responsiveness */
-  @media (max-width: 768px) {
-    .Footer {
-      flex-direction: column;
-      text-align: center;
-      gap: 1.5rem;
-    }
-    
-    .Footer .one, 
-    .Footer .two, 
-    .Footer .three {
-      width: 100%;
-      justify-content: center;
-    }
-    
-    
-  }
-  
-  
+  .Footer  .top {
+   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+ }
+ .top .left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:1rem;
+ } 
+ .top .left img {
+  background: white;
+  border-radius: 3rem;
+  height: 3rem;
+  width: 3rem;
+ }
+
+ .top .middle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 7rem;
+}
+.top .middle ul{
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  margin-right: 2rem;
+}
+
+.top .middle ul li {
+  position: relative;
+}
+.top .middle ul li a {
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 500;
+  color: rgb(196, 195, 195);
+  transition: color 0.3s ease-in-out;
+}
+
+.top .middle ul li a:hover {
+  text-decoration: line-through;
+}
+
+ .top .right {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+ }
+ .top .right img {
+  background: white;
+  border-radius: 3rem;
+  height: 3rem;
+  width: 3rem;
+ }
+ .Footer .bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 5rem;
+  width: 100%;
+ }
+ .Footer .bottom p {
+  white-space: nowrap;
+  margin: 0;
+ }
