@@ -9,6 +9,7 @@ import node from "../assets/node.png"
 import mongo from "../assets/mongo.png"
 import redux from "../assets/redux.png"
 import express from "../assets/express.png"
+import Projects from './Projects'
 // import BubbleAnimation from "./components/BubbleAnimation.jsx"
 
 const Home = () => {
@@ -62,8 +63,8 @@ const Home = () => {
 
 
       <div className='Projects'>
-        <h1>Projects I've worked on</h1>
-        <p>how to show and animate properly</p>
+        <h1>Projects I've worked on<span className="dot"></span><span className="dot"></span><span className="dot"></span></h1>
+        <Projects />
       </div>
 
       

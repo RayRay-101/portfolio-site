@@ -82,58 +82,64 @@
     }
     
     .Contact input {
-
-    width: 30rem;
+    width: 25rem;
+    font-size: 1.2rem;
     padding: 1rem 1rem;
     border: 1px solid rgba(194, 189, 189, 0.03);
     border-radius: 4px;
     transition: var(--transition);
-    background-color: white;
     color: var(--text-color);
     margin: 0.5rem 0;
   }
   
+  .Contact input:first-child {
+    border-bottom: 2px solid #333; 
+    }  
   .Contact input:focus {
     outline: none;
     border: 1px solid rgba(194, 189, 189, 0.03);
-    /* box-shadow: 0 2px 2px rgba(135, 132, 132, 0.3); */
+    border-bottom: 2px solid #333; 
+    box-shadow: 0 2px 2px rgba(135, 132, 132, 0.3);
   }
-  
-  .Contact input::placeholder {
-    color: #717171;
-    font-weight: 400;
-    font-size: 1.2rem;
-    
-  }
-  .Contact textarea::placeholder {
-    color: #717171;
-    font-weight: 400;
-    font-size: 1.2rem;
-    
-  }
+  .Contact:has(input:focus, textarea:focus) input:first-child {
+    border-bottom: none;
+}
+  .Contact:has(input:focus, textarea:focus) input:first-child:focus {
+    border-bottom: 2px solid #333;
+}
 
+    .Contact input::placeholder {
+    color: #717171;
+    font-weight: 400;
+    font-size: 1.2rem;
+    
+  }
   
-    .Contact textarea {
-    width: 100%;
+  
+  .Contact textarea {
+    width: 25rem;
+    resize: none;
     padding: 1rem 1rem;
     border: 1px solid rgba(194, 189, 189, 0.03);
     border-radius: 4px;
-    font-size: 0.95rem;
+    font-size: 1.2rem;
     transition: var(--transition);
-    background-color: white;
     color: var(--text-color);
     margin: 0.5rem 0;
   }
   
-  .Contact textarea:focus {
-    outline: none;
-    border: 1px solid rgba(194, 189, 189, 0.03);
-    /* box-shadow: 0 2px 2px rgba(135, 132, 132, 0.3); */
-  }
-  
   .Contact textarea::placeholder {
     color: #717171;
     font-weight: 400;
+    font-size: 1.2rem;
   }
+  .Contact textarea:focus {
+    outline: none;
+    border-bottom: 2px solid #333; 
+    box-shadow: 0 2px 2px rgba(135, 132, 132, 0.3);
+        box-shadow: 0 2px 2px rgba(135, 132, 132, 0.3);
+
+  }
+  
 
   
