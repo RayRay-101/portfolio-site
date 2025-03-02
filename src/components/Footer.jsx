@@ -7,11 +7,16 @@ import  upscroll from "../assets/upscroll.png"
 
 
 const Footer = () => {
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+  
   return (
     <div className='Footer'>
         <div className='top'>
 
-          <div className='left'>
+          <div className='left' onClick={scrollToTop}>
             <p>SCROLL TO TOP</p>
             <img src={upscroll} alt="up-scroll" />
           </div>

@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/Projects.css';
-import food from "../assets/food.jpeg"
-import food1 from "../assets/food1.jpeg"
+
 import chatapp from "../assets/chatapp.jpeg"
-import chatapp1 from "../assets/chatapp1.jpeg"
 
 // Mock data to simulate API responses
 const DUMMY_PROJECTS = [
@@ -12,7 +10,7 @@ const DUMMY_PROJECTS = [
     title: "Online Chat Platform",
     category: "Web",
     description: "This real-time chat application is web-based with media sharing, emoji integration and efficient backend. A fully responsive real-time chat application using the MERN stack, enabling seamless communication.",
-    imageUrl:<img src={chatapp} alt="Chat Application" />,
+    imageUrl:chatapp,
     tags: ["NodeJS", "ReactJS", "Backend", "Database", "MERN"]
   },
   
@@ -38,7 +36,7 @@ const PROJECT_DETAIL =
   
   
   We implemented a modular architecture using React for the frontend and Web-sockets(socket-io) for real-time data synchronization. `,
-  imageUrl: <img src={chatapp} loading="lazy" fetchpriority="high" alt="Chat Application" />,
+  imageUrl:chatapp,
   // gallery: [
   //   "/api/placeholder/800/500",
   //   "/api/placeholder/800/500"
@@ -88,7 +86,7 @@ const PROJECT_DETAIL =
   // }
 };
 
-const CATEGORIES = ['All', 'Web', 'UI/UX'];
+const CATEGORIES = ['All', 'Web'];
 
 // ProjectCard Component
 const ProjectCard = ({ project, onProjectSelect }) => (
@@ -134,21 +132,36 @@ const FilterTabs = ({ activeFilter, categories, onFilterChange }) => (
 const ProjectSection = ({ onProjectSelect }) => {
   const [projects, setProjects] = useState([]);
   const [filter, setFilter] = useState('All');
+  const [isLoading, setIsLoading] = useState(true);
+
   
   useEffect(() => {
-    // Simulate API call with timeout
     const fetchProjects = async () => {
       try {
-        // In a real app, this would be replaced with an actual API call
-        setTimeout(() => setProjects(DUMMY_PROJECTS), 300);
+        setTimeout(() => {
+          setProjects(DUMMY_PROJECTS);
+          setIsLoading(false);
+        }, 300);
       } catch (error) {
         console.error("Error fetching projects:", error);
+        setIsLoading(false);
       }
     };
     
     fetchProjects();
   }, []);
-  
+  if (isLoading) {
+    return (
+      <section className="project-section">
+        <div className="container">
+          <div className="loading-container">
+            <div className="loading-spinner"></div>
+            <p>Loading projects...</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
   const filteredProjects = filter === 'All' 
     ? projects 
     : projects.filter(project => project.category === filter);
@@ -157,7 +170,6 @@ const ProjectSection = ({ onProjectSelect }) => {
     <section className="project-section">
       <div className="container">
         <div className="section-header">
-          {/* <h2>Our Projects</h2> */}
           <p>Explore my latest work and creative solutions</p>
         </div>
         
