@@ -17,9 +17,13 @@
 
 }
 .aboutupper .myself {
-    margin-left: 6rem;
+    margin-left: 7rem;
     margin-top: 2rem;
     width:70%;
+}
+.aboutupper h1:first-child {
+  margin-bottom: 5rem;
+  margin-left: -1rem;
 }
 .aboutupper p{
     font-size: 1.5rem;
@@ -44,7 +48,6 @@
     align-items: center;
     justify-content: center;
     transform: translateY(-50%);
-    margin-top: -1.5rem;
 }
 .line hr {
     width: 2px;
@@ -157,7 +160,6 @@
         border-radius: 5px;
       }
       .aboutlower .skills .skills-container li:hover {
-        font-size: ;
         transform: translateX(1.5);
         text-decoration: line-through;
       }

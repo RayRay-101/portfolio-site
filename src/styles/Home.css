@@ -350,4 +350,281 @@ body {
   
   
  
+/* Large desktop breakpoint */
+@media (max-width: 1500px) {
+  .Home {
+    overflow-x: hidden; 
+    gap: 15rem;
+  }
   
+  .OrbitContainer {
+    width: 600px;
+    height: 600px;
+    top: 20%;
+    left: 50%;
+  }
+  
+  .HomeImage {
+  }
+  
+  .HomeImage img {
+    width: 350px;
+    margin-right: -5rem;
+  }
+}
+
+/* Medium desktop breakpoint */
+@media (max-width: 1300px) {
+  .Home {
+    gap: 10rem;
+  }
+  
+  .OrbitContainer {
+    width: 550px;
+    height: 550px;
+    top: 20%;
+    left: 50%;
+  }
+  
+  .HomeImage img {
+    width: 330px;
+  }
+}
+
+/* Small desktop breakpoint */
+@media (max-width: 1100px) {
+  .Homepage {
+    margin-top: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+  }
+  
+  .Home {
+    gap: 6rem;
+    padding: 0 2rem;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  .OrbitContainer {
+    width: 500px;
+    height: 500px;
+    top: 20%;
+    left: 50%;
+  }
+  
+  .HomeImage {
+    margin-right: -2rem;
+  }
+  
+  .HomeImage img {
+    width: 300px;
+  }
+  
+  .vertical {
+    left: -3rem;
+  }
+}
+
+/* Tablet breakpoint */
+@media (max-width: 1024px) {
+  .Homepage {
+    margin-top: 2.5rem;
+    overflow-x: hidden;
+  }
+  
+  .Home {
+    gap: 5rem;
+    padding: 0 2rem;
+    overflow: hidden;
+  }
+
+  .OrbitContainer {
+    width: 450px;
+    height: 450px;
+    top: 20%;
+    left: 50%;
+  }
+ 
+  .HomeImage {
+    margin-right: -2rem;
+  }
+  
+  .HomeImage img {
+    width: 290px;
+  }
+  
+  .HomeText {
+    font-size: 24px;
+  }
+  
+  .vertical {
+    display: none;
+  }
+}
+
+/* Between tablet and mobile breakpoint */
+@media (max-width: 900px) {
+  .Home {
+    gap: 3rem;
+  }
+  
+  .OrbitContainer {
+    width: 400px;
+    height: 400px;
+  }
+  
+  .HomeImage {
+    margin-right: -1rem;
+  }
+  
+  .HomeImage img {
+    width: 270px;
+  }
+}
+
+/* Small tablet/Large mobile breakpoint */
+@media (max-width: 768px) {
+  .Home {
+    flex-direction: column-reverse;
+    gap: 3rem;
+    height: auto;
+    padding: 8rem 2rem;
+  }
+  
+  .HomeImageWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .HomeImage {
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+  
+  .HomeImage img {
+    width: 250px;
+  }
+  
+  .OrbitContainer {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    left: auto;
+    top: auto;
+    margin-top: -200px;
+    margin-bottom: 2rem;
+  }
+  
+  .HomeText {
+    text-align: center;
+    width: 100%;
+    font-size: 22px;
+  }
+  
+  .vertical {
+    position: static;
+    transform: none;
+    flex-direction: row;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .vertical hr {
+    width: 50px;
+    height: 2px;
+    margin: 0 10px;
+  }
+  
+  .vertical span {
+    writing-mode: horizontal-tb;
+    margin-top: 0;
+  }
+  
+  .Scroll {
+    margin-top: 2rem;
+  }
+  
+  .OrbitImage {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Mobile breakpoint */
+@media (max-width: 480px) {
+  .Home {
+    padding: 6rem 1rem;
+    gap: 1rem;
+  }
+  
+  .HomeImage img {
+    width: 200px;
+  }
+  
+  .OrbitContainer {
+    width: 280px;
+    height: 280px;
+    margin-top: -150px;
+  }
+  
+  .HomeText {
+    font-size: 18px;
+  }
+  
+  .HomeText h1 {
+    font-size: 28px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .HomeText p {
+    font-size: 16px;
+  }
+  
+  .OrbitImage {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .Projects h1 {
+    font-size: 24px;
+  }
+  
+  .Projects p {
+    font-size: 16px;
+  }
+  
+  .Scroll hr {
+    height: 100px;
+  }
+  
+  .Scroll p {
+    font-size: 18px;
+  }
+}
+
+/* Very small devices */
+@media (max-width: 360px) {
+  .OrbitContainer {
+    width: 240px;
+    height: 240px;
+  }
+  
+  .HomeImage img {
+    width: 180px;
+  }
+  
+  .OrbitImage {
+    width: 25px;
+    height: 25px;
+  }
+  
+  .HomeText h1 {
+    font-size: 24px;
+  }
+  
+  .HomeText p {
+    font-size: 14px;
+  }
+}

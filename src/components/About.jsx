@@ -30,7 +30,7 @@ const About = () => {
         <img src={austin} alt="mypic" />
 
         <div className='skills'>
-          <h1>What I use</h1>
+          <h1>What I use <span className="dot"></span><span className="dot"></span><span className="dot"></span></h1>
           <div className='skills-container'>
             <div className='frontend'>
             <p>Frontend</p>
@@ -40,6 +40,13 @@ const About = () => {
             <li>JavaScript</li>
             <li>TypeScript</li>
             </ul>
+            <p>Libraries</p>
+            <ul>
+            <li>ReactJS</li>
+            <li>ExpressJS</li>
+            <li>Redux</li>
+            <li>Tailwind CSS</li>
+            </ul>
             </div>
             <div className='backend'>
             <p>Backend</p>
@@ -47,13 +54,6 @@ const About = () => {
             <li>TypeScript</li>
             <li>NodeJS</li>
             <li>MongoDB</li>
-            </ul>
-            <p>Libraries</p>
-            <ul>
-            <li>ReactJS</li>
-            <li>ExpressJS</li>
-            <li>Redux</li>
-            <li>Tailwind</li>
             </ul>
             </div>
           </div>

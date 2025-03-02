@@ -115,3 +115,299 @@
     transform: scaleX(1);
     transform-origin: left;
 }
+
+/* Dark theme
+
+.Navbar.dark {
+    background-color: #333;
+    color: white;
+}
+
+.Navbar.dark .Navlinks ul li a {
+    color: #ccc;
+}
+
+.Navbar.dark .Navlinks ul li a::before {
+    background-color: white;
+}
+
+.Navbar.dark .Navlinks ul li:last-child a {
+    color: #ccc;
+    border: 1px solid #ccc;
+}
+
+.Navbar.dark .Navlinks ul li:last-child a::after {
+    background-color: #ccc;
+}
+
+.Navbar.dark .Navlinks ul li:last-child a:hover {
+    color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.Navbar.dark .Navlinks ul li:last-child a:hover::after {
+    background-color: white;
+}
+
+.Navbar.dark .Navlinks ul li:last-child a:hover::before {
+    background-color: #ccc;
+}
+ */
+/* Media queries */
+.Navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    /* background-color: #ffffff; */
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+}
+
+.Navlogo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.Navlogo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    object-fit: contain;
+    background-color: rgb(196, 195, 195);
+}
+.Navlogo p {
+    font-size: 22px;
+    font-weight:500;
+    color: #333;
+}
+
+.Navlinks ul{
+    display: flex;
+    gap: 25px;
+    list-style-type: none;
+}
+
+.Navlinks ul li {
+    position: relative;
+}
+.Navlinks ul li a {
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 500;
+    color: #333;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Underline Effect */
+.Navlinks ul li a::before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: black;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease-in-out;
+}
+/* ✅ Persistent Underline for Active Link */
+.Navlinks ul li a.active::before {
+    width: 100%;
+}
+
+.Navlinks ul li a.active:hover {
+    text-decoration: none;
+}
+
+/* Special styling for the Resume link */
+.Navlinks ul li:last-child a {
+    padding: 8px 16px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    text-decoration: none;
+}
+
+.Navlinks ul li:last-child a::before {
+    display: none; /* Remove the underline effect for resume */
+}
+
+.Navlinks ul li:last-child a:hover {
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Black background effect on hover */
+.Navlinks ul li:last-child a::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease-out;
+}
+
+.Navlinks ul li:last-child a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Mobile Navigation Styles */
+.mobile-nav-container {
+    position: relative;
+}
+
+/* Hamburger Button Styles */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1100;
+}
+
+.hamburger-line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #333;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Animated Hamburger to X */
+.hamburger.open .hamburger-line:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger.open .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.open .hamburger-line:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Mobile Menu Styles */
+.mobile-menu {
+    position: absolute;
+    top: 100%;
+    right: -50px;
+    width: 250px;
+    background: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transform: translateY(-20px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.mobile-menu.open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-menu ul li {
+    margin-bottom: 15px;
+}
+
+.mobile-menu ul li a {
+    display: block;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.mobile-menu ul li a:hover {
+    background-color: #f5f5f5;
+}
+
+.mobile-menu ul li a.active {
+    position: relative;
+    font-weight: 600;
+}
+
+.mobile-menu ul li a.active::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 4px;
+    height: 100%;
+    background-color: #333;
+    border-radius: 2px;
+}
+
+/* Special styling for mobile Resume link */
+.mobile-menu ul li:last-child a {
+    margin-top: 10px;
+    padding: 10px 15px;
+    border: 1px solid #333;
+    text-align: left;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    width: fit-content;
+}
+
+.mobile-menu ul li:last-child a:hover {
+    background-color: #333;
+    color: white;
+}
+
+/* Media Queries */
+@media (max-width: 1100px) {
+    .Navbar {
+        padding: 15px 20px;
+    }
+    
+    .Navlogo span {
+        display: none;
+    }
+    
+    .Navlogo p {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .Navlogo img {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .Navlogo p {
+        font-size: 16px;
+    }
+}
