@@ -60,10 +60,11 @@
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 2rem;
     animation: fadeInUp 0.8s ease;
+    justify-content: center;
   }
   
   .project-card {
-    background-color: white;
+    background-color: whitesmoke;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);

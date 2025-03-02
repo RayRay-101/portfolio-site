@@ -1,62 +1,91 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/Projects.css';
+import food from "../assets/food.jpeg"
+import food1 from "../assets/food1.jpeg"
+import chatapp from "../assets/chatapp.jpeg"
+import chatapp1 from "../assets/chatapp1.jpeg"
 
 // Mock data to simulate API responses
 const DUMMY_PROJECTS = [
   {
     id: 1,
-    title: "Tech Startup Branding",
-    category: "Branding",
-    description: "Complete brand identity design for an AI startup including logo, colors, and guidelines.",
-    imageUrl: "/api/placeholder/600/400",
-    tags: ["Adobe Illustrator", "Photoshop", "Brand Strategy"]
+    title: "Online Chat Platform",
+    category: "Web",
+    description: "This real-time chat application is web-based with media sharing, emoji integration and efficient backend. A fully responsive real-time chat application using the MERN stack, enabling seamless communication.",
+    imageUrl:<img src={chatapp} alt="Chat Application" />,
+    tags: ["NodeJS", "ReactJS", "Backend", "Database", "MERN"]
   },
   
-  {
-    id: 2,
-    title: "Educational Platform",
-    category: "Web",
-    description: "Online learning platform with interactive courses and progress tracking.",
-    imageUrl: "/api/placeholder/600/400",
-    tags: ["Next.js", "Tailwind CSS", "PostgreSQL"]
-  }
+  // {
+  //   id: 2,
+  //   title: "D-Blinks Food Delivery",
+  //   category: "Web",
+  //   description: "A food delivery app that connects individuals to best restaurants and eateries nearby. Food is also delivered with a blink of an eye",
+  //   imageUrl: <img src={food} alt="food delivery" />,
+  //   tags: ["Backend", "HTML", "CSS", "MongoDB"]
+  // }
 ];
 
-const PROJECT_DETAIL = {
+const PROJECT_DETAIL = 
+{
   id: 1,
-  title: "E-commerce Dashboard",
+  title: "Online Chat Platform",
   category: "Web Development",
-  client: "RetailTech Inc.",
-  completionDate: "August 2024",
-  description: "A comprehensive dashboard solution for e-commerce businesses to track sales, inventory, customer behaviors, and marketing campaign performance in real-time.",
-  longDescription: `This project involved creating a sophisticated analytics dashboard for e-commerce businesses that needed better insights into their operations. The dashboard provides real-time data visualization and reporting tools that help businesses make informed decisions.
-
-  The main challenges included processing large volumes of data efficiently, creating intuitive visualizations that communicate complex metrics clearly, and ensuring the entire system updates in real-time without performance issues.
+  client: "Final Year Inc.",
+  completionDate: "July 2024",
+  description: "This chat application is a modern, real-time messaging platform built with ReactJS, ExpressJS, NodeJS, Socket.IO, and MongoDB Atlas.",
+  longDescription: ` It features instant messaging, contact management, and image handling with MongoDB's GridFS. The app provides seamless communication with live message updates, efficient image storage and retrieval, and a user-friendly interface. The frontend is deployed on Vercel, while the backend is hosted on Render, ensuring scalability and reliable performance.
   
-  We implemented a modular architecture using React for the frontend and Firebase for real-time data synchronization. Chart.js was used to create interactive and responsive charts that adjust based on the user's device screen size.`,
-  imageUrl: "/api/placeholder/1200/600",
-  gallery: [
-    "/api/placeholder/800/500",
-    "/api/placeholder/800/500",
-    "/api/placeholder/800/500",
-    "/api/placeholder/800/500"
-  ],
-  technologies: ["React", "Redux", "Chart.js", "Firebase", "Node.js", "Express", "Material UI"],
+  
+  We implemented a modular architecture using React for the frontend and Web-sockets(socket-io) for real-time data synchronization. `,
+  imageUrl: <img src={chatapp} loading="lazy" fetchpriority="high" alt="Chat Application" />,
+  // gallery: [
+  //   "/api/placeholder/800/500",
+  //   "/api/placeholder/800/500"
+  // ],
+  technologies: ["React", "Redux", "MongoDB", "Node.js", "Express", "Material UI"],
   features: [
-    "Real-time sales monitoring dashboard",
-    "Inventory management system",
-    "Customer behavior analytics",
-    "Marketing campaign performance tracking",
-    "Customizable reporting tools",
-    "Mobile-responsive design"
+    "Instant Messaging: Real-time chat with live message updates",
+    "Contact Management: Easily manage and update contacts with the latest message display",
+    "Image Handling: Upload, retrieve, and display images using MongoDB GridFS",
+    "Emoji Picker: Add emojis to your messages with an integrated emoji picker",
+    "Cross-Platform: Seamless usage across devices —desktop, and tablet"
   ],
-  demoLink: "https://example.com/demo",
-  githubLink: "https://github.com/example/project",
+  demoLink: "https://chat-app-plum-nu.vercel.app/",
+  githubLink: "https://github.com/RayRay-101/Chat-app",
   testimonial: {
-    quote: "The dashboard transformed how we operate our online store. We can now make data-driven decisions much faster than before.",
-    author: "Jane Smith",
-    position: "CTO at RetailTech Inc."
-  }
+    quote: "The realtime communication helped our business partners to achieve smooth interactive communication.",
+    author: "Kwame Smith",
+    position: "CEO at Final Year Inc."
+  },
+
+  // id: 2,
+  // title: "D-BLINKS Food Delivery",
+  // category: "Web Development",
+  // client: "School Project",
+  // completionDate: "September 2024",
+  // description: "Developed a food delivery app in a group project as the team leader, integrating key features like restaurant selection, order tracking, and real-time delivery updates.",
+  
+  // imageUrl: <img src={food} loading="lazy" fetchpriority="high" alt="Chat Application" />,
+  // // gallery: [
+  // //   "/api/placeholder/800/500",
+  // //   "/api/placeholder/800/500"
+  // // ],
+  // technologies: ["React", "Redux", "Javascript", "Node.js", "Express", "MongoDB"],
+  // features: [
+  //   "Instant Messaging: Real-time chat with live message updates",
+  //   "Contact Management: Easily manage and update contacts with the latest message display",
+  //   "Image Handling: Upload, retrieve, and display images using MongoDB GridFS",
+  //   "Emoji Picker: Add emojis to your messages with an integrated emoji picker",
+  //   "Cross-Platform: Seamless usage across devices —desktop, and tablet"
+  // ],
+  // demoLink: "#",
+  // githubLink: "#",
+  // testimonial: {
+  //   quote: "The realtime communication helped our business partners to achieve smooth interactive communication.",
+  //   author: "Kwame Smith",
+  //   position: "Team Lead"
+  // }
 };
 
 const CATEGORIES = ['All', 'Web', 'UI/UX'];
@@ -128,8 +157,8 @@ const ProjectSection = ({ onProjectSelect }) => {
     <section className="project-section">
       <div className="container">
         <div className="section-header">
-          <h2>Our Projects</h2>
-          <p>Explore our latest work and creative solutions</p>
+          {/* <h2>Our Projects</h2> */}
+          <p>Explore my latest work and creative solutions</p>
         </div>
         
         <FilterTabs 
@@ -187,18 +216,18 @@ const ProjectOverview = ({ description, longDescription }) => (
   </div>
 );
 
-const ProjectGallery = ({ gallery }) => (
-  <div className="project-gallery">
-    <h2>Project Gallery</h2>
-    <div className="gallery-grid">
-      {gallery.map((image, index) => (
-        <div key={index} className="gallery-item">
-          <img src={image} alt={`Project view ${index + 1}`} />
-        </div>
-      ))}
-    </div>
-  </div>
-);
+// const ProjectGallery = ({ gallery }) => (
+//   <div className="project-gallery">
+//     <h2>Project Gallery</h2>
+//     <div className="gallery-grid">
+//       {gallery.map((image, index) => (
+//         <div key={index} className="gallery-item">
+//           <img src={image} alt={`Project view ${index + 1}`} />
+//         </div>
+//       ))}
+//     </div>
+//   </div>
+// );
 
 const ProjectFeatures = ({ features }) => (
   <div className="project-features">
@@ -333,7 +362,7 @@ const ProjectDetailPage = ({ projectId, onBackClick }) => {
               longDescription={project.longDescription} 
             />
             
-            <ProjectGallery gallery={project.gallery} />
+            {/* <ProjectGallery gallery={project.gallery} /> */}
             <ProjectFeatures features={project.features} />
             
             {project.testimonial && <Testimonial testimonial={project.testimonial} />}
