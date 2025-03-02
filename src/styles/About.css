@@ -18,12 +18,12 @@
 }
 .aboutupper .myself {
     margin-left: 7rem;
-    margin-top: 2rem;
+    margin-bottom: -10rem;
     width:70%;
 }
 .aboutupper h1:first-child {
   margin-bottom: 5rem;
-  margin-left: -1rem;
+  margin-left: 7rem;
 }
 .aboutupper p{
     font-size: 1.5rem;
@@ -41,7 +41,7 @@
 }
 .line {
     position: absolute;
-    left: 8.5rem; 
+    left: -10rem; 
     top: 20rem;
     display: flex;
     flex-direction: column;
@@ -138,7 +138,7 @@
       
       .aboutlower .skills .skills-container .frontend, 
       .aboutlower .skills .skills-container .backend {
-        /* width: 45%; */
+        width: 45%;
       }
       
       .aboutlower .skills .skills-container ul {
@@ -174,3 +174,154 @@
         margin: auto;
       }
       
+      /* Base styles already defined in your original CSS */
+
+/* Large desktop screens */
+@media screen and (min-width: 1200px) {
+  .aboutupper {
+    width: 65%;
+    /* margin-left: -4rem; */
+    margin-top: -15rem;
+  }
+  .aboutupper h1:first-child br {
+    display: none;
+  }
+  .aboutupper h1:first-child {
+    /* font-size: 2.5rem; */
+    margin-left: 15rem;
+    margin-top: 5rem; /* Increased spacing */
+  }
+  .aboutupper .myself {
+    margin-left: 15rem;
+    width: 75%;
+  }
+  .line {
+    left: -13rem;
+    width: 50%;
+    margin: 2rem auto; 
+  }
+}
+
+/* Medium desktops */
+@media screen and (max-width: 1200px) {
+  .aboutupper {
+    width: 65%;
+    /* margin-left: -4rem;
+    margin-top: -8rem;  */
+  }
+  .aboutupper h1:first-child {
+    font-size: 2.2rem;
+    margin-left: 6.5rem;
+    margin-top: 0rem; 
+    text-align: left;
+  }
+  .aboutupper h1:first-child br {
+    display: none;
+  }
+  .aboutupper .myself {
+    margin-left: 6rem;
+    width: 80%;
+  }
+  .line {
+    width: 60%;
+    left: -10rem;
+    margin-top: 1.5rem;
+  }
+}
+
+/* Small desktop and tablet landscape */
+@media screen and (max-width: 992px) {
+  .aboutpage {
+    flex-direction: column;
+    padding: 10px 20px;
+  }
+  .aboutupper {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .aboutupper h1:first-child {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-top: 3rem; /* Adjusted for responsiveness */
+    margin-left: 0;
+  }
+  .aboutupper .myself {
+    margin-left: 0;
+    width: 100%;
+  }
+  .line {
+    width: 70%;
+    margin: 2rem auto; /* Fully centered */
+  }
+  .aboutlower {
+    width: 100%;
+    margin-top: 10rem; 
+  }
+  .aboutlower .skills  {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+}
+
+/* Tablets portrait */
+@media screen and (max-width: 768px) {
+  .aboutupper h1:first-child {
+    font-size: 1.6rem;
+    margin-top: 2.5rem;
+  }
+  .aboutupper .myself {
+    width: 95%;
+  }
+  .line {
+    width: 80%;
+    margin: 2rem auto;
+  }
+  .aboutlower {
+    width: 100%;
+    margin-top: 10rem; 
+  }
+}
+
+/* Mobile landscape */
+@media screen and (max-width: 576px) {
+  .aboutupper h1:first-child {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+  }
+  .aboutupper .myself {
+    font-size: 1rem;
+    width: 100%;
+  }
+  .line {
+    width: 90%;
+    margin: 1.5rem auto;
+  }
+  .aboutlower {
+    width: 100%;
+    margin-top: 10rem; 
+  }
+}
+
+/* Mobile portrait */
+@media screen and (max-width: 480px) {
+  .aboutupper h1:first-child {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  .aboutupper .myself {
+    font-size: 0.9rem;
+    width: 100%;
+  }
+  .line {
+    width: 95%;
+    margin: 1rem auto;
+  }
+  .aboutlower {
+    width: 100%;
+    margin-top: 10rem; 
+  }
+}

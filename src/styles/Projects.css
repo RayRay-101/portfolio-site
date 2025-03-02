@@ -540,51 +540,143 @@
   }
   
   /* Responsive Design */
-  @media (max-width: 992px) {
-    .project-content {
-      grid-template-columns: 1fr;
-    }
-    
-    .hero-section {
-      height: 50vh;
-    }
-    
-    .overlay h1 {
-      font-size: 2.5rem;
-    }
+/* Large Devices (Desktops) */
+@media (max-width: 1200px) {
+  .projects-grid {
+    width: 90%;
+    max-width: 900px;
+  }
+}
+
+/* Medium Devices (Laptops and Small Desktops) */
+@media (max-width: 992px) {
+  .project-content {
+    grid-template-columns: 1fr;
   }
   
-  @media (max-width: 768px) {
-    .projects-grid {
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    }
-    
-    .gallery-grid {
-      grid-template-columns: 1fr;
-    }
-    
-    .section-header h2, 
-    .project-overview h2,
-    .project-gallery h2,
-    .project-features h2 {
-      font-size: 1.8rem;
-    }
-    
-    .hero-section {
-      height: 40vh;
-    }
-    
-    .overlay h1 {
-      font-size: 2rem;
-    }
+  .hero-section {
+    height: 50vh;
   }
   
-  @media (max-width: 576px) {
-    .filter-tabs {
-      justify-content: center;
-    }
-    
-    .hero-section {
-      height: 30vh;
-    }
+  .overlay h1 {
+    font-size: 2.5rem;
   }
+
+  .projects-grid {
+    width: 80%;
+    max-width: 700px;
+  }
+}
+
+/* Small Devices (Tablets) */
+@media (max-width: 768px) {
+  .projects-grid {
+    width: 100%;
+    flex-direction: column;
+  }
+  
+  .project-card {
+    width: 100%;
+    max-width: 450px;
+  }
+  
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .section-header h2, 
+  .project-overview h2,
+  .project-gallery h2,
+  .project-features h2 {
+    font-size: 1.8rem;
+  }
+  
+  .hero-section {
+    height: 40vh;
+  }
+  
+  .overlay h1 {
+    font-size: 2rem;
+  }
+
+  .sidebar-card {
+    padding: 1.2rem;
+  }
+}
+
+/* Extra Small Devices (Mobile Phones) */
+@media (max-width: 576px) {
+  .filter-tabs {
+    justify-content: center;
+  }
+  
+  .hero-section {
+    height: 30vh;
+  }
+
+  .section-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .section-header p {
+    font-size: 1rem;
+  }
+
+  .project-detail-page .overlay h1 {
+    font-size: 1.6rem;
+  }
+
+  .project-category-label {
+    font-size: 1rem;
+  }
+
+  .project-overview h2,
+  .project-features h2,
+  .sidebar-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .project-description {
+    font-size: 0.9rem;
+  }
+
+  .technology-tag {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .features-list li {
+    font-size: 0.9rem;
+  }
+}
+
+/* Very Small Devices */
+@media (max-width: 375px) {
+  .filter-tab {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .hero-section {
+    height: 25vh;
+    min-height: 200px;
+  }
+
+  .project-image-container {
+    height: 180px;
+  }
+
+  .project-tag {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+  }
+  
+  .buttons-container {
+    gap: 0.8rem;
+  }
+  
+  .demo-button, .github-button {
+    padding: 0.7rem;
+    font-size: 0.9rem;
+  }
+}

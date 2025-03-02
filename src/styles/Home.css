@@ -9,7 +9,7 @@
 }
 
 body {
-  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  /* font-family: 'Inter', 'Helvetica Neue', sans-serif; */
   background-color: var(--bg-color);
   color: var(--text-color);
   line-height: 1.6;
@@ -82,7 +82,7 @@ body {
 
 
 .OrbitContainer {
-  top: 20%; 
+  top: 5%; 
   left: 52%;
   position: absolute;
   width: 650px;
@@ -360,7 +360,7 @@ body {
   .OrbitContainer {
     width: 600px;
     height: 600px;
-    top: 20%;
+    top: 2%;
     left: 50%;
   }
   
@@ -431,18 +431,18 @@ body {
     margin-top: 2.5rem;
     overflow-x: hidden;
   }
-  
   .Home {
+    flex-direction: column-reverse;
     gap: 5rem;
-    padding: 0 2rem;
-    overflow: hidden;
+    /* padding: 0 2rem;
+    overflow: hidden; */
   }
 
   .OrbitContainer {
     width: 450px;
     height: 450px;
-    top: 20%;
-    left: 50%;
+    top: 3.5%;
+    left: 30%;
   }
  
   .HomeImage {
@@ -480,6 +480,7 @@ body {
   .HomeImage img {
     width: 270px;
   }
+  
 }
 
 /* Small tablet/Large mobile breakpoint */
@@ -513,7 +514,7 @@ body {
     height: 350px;
     left: auto;
     top: auto;
-    margin-top: -200px;
+    /* margin-top: -200px; */
     margin-bottom: 2rem;
   }
   

@@ -142,4 +142,128 @@
   }
   
 
+  /* Base styles already defined in your original CSS */
+
+/* Medium screens (tablets) */
+@media screen and (max-width: 768px) {
+  .Contact {
+    margin: 3rem auto;
+    padding: 0 1rem;
+  }
   
+  .Contact h1 {
+    font-size: 1.8rem;
+    margin: 1.5rem 0;
+  }
+  
+  .Contact p {
+    font-size: 0.9rem;
+    margin: 1.5rem 0 1rem;
+  }
+  
+  .Contact input,
+  .Contact textarea {
+    width: 100%;
+    max-width: 20rem;
+  }
+  
+  .Contact button {
+    margin: 2rem 0;
+    padding: 15px 30px;
+  }
+}
+
+/* Small screens (mobile phones) */
+@media screen and (max-width: 480px) {
+  .Contact {
+    margin: 2rem auto;
+    box-shadow: none;
+    border-radius: 0;
+  }
+  
+  .Contact h1 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+  }
+  
+  .Contact p {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    margin: 1rem 0;
+  }
+  
+  .Contact input,
+  .Contact textarea {
+    width: 100%;
+    max-width: 18rem;
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+  
+  .Contact input::placeholder,
+  .Contact textarea::placeholder {
+    font-size: 1rem;
+  }
+  
+  .Contact button {
+    margin: 1.5rem 0;
+    padding: 12px 25px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Extra small screens */
+@media screen and (max-width: 320px) {
+  .Contact input,
+  .Contact textarea {
+    max-width: 15rem;
+    font-size: 0.9rem;
+  }
+  
+  .Contact button {
+    padding: 10px 20px;
+  }
+}
+
+/* For landscape orientation on mobile */
+@media screen and (max-height: 450px) and (orientation: landscape) {
+  .Contact {
+    margin: 1rem auto;
+  }
+  
+  .Contact h1 {
+    font-size: 1.4rem;
+    margin: 0.8rem 0;
+  }
+  
+  .Contact p {
+    margin: 0.8rem 0;
+  }
+  
+  .Contact input,
+  .Contact textarea {
+    padding: 0.6rem;
+    margin: 0.3rem 0;
+  }
+  
+  .Contact button {
+    margin: 1rem 0;
+  }
+}
+
+/* For very large screens */
+@media screen and (min-width: 1200px) {
+  .Contact {
+    max-width: 800px;
+    padding: 2rem;
+  }
+  
+  .Contact h1 {
+    font-size: 2.5rem;
+  }
+  
+  .Contact input,
+  .Contact textarea {
+    width: 30rem;
+  }
+}
