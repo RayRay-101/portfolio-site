@@ -1,192 +1,206 @@
- /* Global styles */
- :root {
-  --primary-color: #333;
-  --accent-color: #0066cc;
-  --bg-color: #fafafa;
-  --text-color: #333;
-  --light-gray: #e0e0e0;
-  --transition: all 0.3s ease;
-}
-
-body {
-  /* font-family: 'Inter', 'Helvetica Neue', sans-serif; */
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
-}
-
-
-.Homepage {
-    margin-top: -5rem;
-}
-.Home {
+/* ========================
+   VARIABLES & BASE STYLES
+   ======================== */
+   :root {
+    /* Colors */
+    --primary-color: #333;
+    --accent-color: #0066cc;
+    --bg-color: #fafafa;
+    --text-color: #333;
+    --light-gray: #e0e0e0;
+    --medium-gray: #999;
+    --dark-gray: #666;
+    
+    /* Animation */
+    --transition-standard: all 0.3s ease;
+    --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --transition-dramatic: all 0.4s cubic-bezier(0.7, 0, 0.3, 1);
+    
+    /* Breakpoints */
+    --breakpoint-tiny: 360px;
+    --breakpoint-mobile: 480px;
+    --breakpoint-tablet-small: 768px;
+    --breakpoint-tablet-medium: 900px;
+    --breakpoint-tablet-large: 1024px;
+    --breakpoint-desktop-small: 1100px;
+    --breakpoint-desktop-medium: 1300px;
+    --breakpoint-desktop-large: 1500px;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 3rem;
+    --spacing-xl: 5rem;
+    
+    /* Font Sizes */
+    --font-xs: 0.875rem;    /* 14px */
+    --font-sm: 1rem;        /* 16px */
+    --font-md: 1.125rem;    /* 18px */
+    --font-lg: 1.5rem;      /* 24px */
+    --font-xl: 1.75rem;     /* 28px */
+    --font-xxl: 2rem;       /* 32px */
+    --font-xxxl: 2.5rem;    /* 40px */
+  }
+  
+  body {
+    font-family: 'Poppins', 'Helvetica Neue', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    font-size: var(--font-sm);
+  }
+  
+  /* ========================
+     ANIMATIONS
+     ======================== */
+  @keyframes levitate {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+  }
+  
+  @keyframes bounceFade {
+    0% { transform: translateY(0); opacity: 1; }
+    50% { transform: translateY(-10px); opacity: 0.5; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+  
+  @keyframes orbit {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* ========================
+     HOMEPAGE & HERO SECTION
+     ======================== */
+  .Homepage {
+    margin-top: 0;
+    overflow-x: hidden;
+  }
+  
+  /* Base mobile styles */
+  .Home {
     display: flex;
-    justify-content: center;
-    gap: 25rem;
-    align-items: center;
-    height: 100vh;
-    background-color: #f8f9fa;
-    /* font-size: 24px; */
-    font-weight: bold;
-    color: #333;
-    /* margin-right: 70px; */
-}
-.HomeText {
-    /* width: 100%; */
-    font-size: 28px;
-    font-weight: bold;
-    color: #333;
-    position: relative;
-}
- .dot {
-  display: inline-block; 
-  width: 10px;  
-  height: 10px;
-  background-color: #797878; 
-  border-radius: 50%; 
-  margin: 0 5px;   
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-}
-
-.HomeImage {
-  position: relative; 
-  z-index: 2;   
-    display: flex;
+    flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
-    background-size: cover; 
-    margin-bottom: 20px; 
-    margin-right: -5rem;
-}
-
-.HomeImage img{
-    width: 400px;
-    border-radius: 20%;
+    gap: 1rem;
     height: auto;
-    animation: levitate 3s infinite ease-in-out;
-}
-@keyframes levitate {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-
-
-
-.OrbitContainer {
-  top: 5%; 
-  left: 52%;
-  position: absolute;
-  width: 650px;
-  height: 650px;
-  transform-origin: center;
-  animation: levitate 3s infinite ease-in-out;
-  animation: bounceFade 3s infinite ease-in-out;
-
-  z-index: 1;
-}
-/* Container for orbiting effect */
-.OrbitImages {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  animation: orbit 15s linear infinite;
-}
-
-/* Orbiting Images */
-.OrbitImage {
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  transition: all 0.3s;
-}
-
-.OrbitImage:hover {
-  transform: translate(-50%, -50%) scale(1);
-}
-
-/* Position in a perfect circle */
-.orbit-1 {
-  top: 0%;
-  left: 50%;
-}
-
-.orbit-2 {
-  top: 14.6%;
-  left: 85.4%;
-}
-
-.orbit-3 {
-  top: 50%;
-  left: 100%;
-}
-
-.orbit-4 {
-  top: 85.4%;
-  left: 85.4%;
-}
-
-.orbit-5 {
-  top: 100%;
-  left: 50%;
-}
-
-.orbit-6 {
-  top: 85.4%;
-  left: 14.6%;
-}
-
-.orbit-7 {
-  top: 50%;
-  left: 0%;
-}
-
-.orbit-8 {
-  top: 14.6%;
-  left: 14.6%;
-}
-
-/* Orbit Animation */
-@keyframes orbit {
-  0% {
-    transform: rotate(0deg);
+    padding: 6rem 1rem;
+    background-color: #f8f9fa;
+    color: var(--primary-color);
+    overflow-x: hidden;
+    overflow-y: hidden;
   }
-  100% {
-    transform: rotate(360deg);
+  
+  .HomeText {
+    text-align: center;
+    width: 100%;
+    font-size: var(--font-sm);  /* Starting from smaller font size on mobile */
+    font-weight: bold;
+    color: var(--primary-color);
+    position: relative;
+    margin-top: -10rem;
   }
-}
-
-/* Optional: For responsive design */
-@media (max-width: 768px) {
-  .OrbitContainer {
-    width: 250px;
-    height: 250px;
+  
+  .HomeText h1 {
+    font-size: var(--font-lg);  /* Starting from medium size on mobile */
+    margin-bottom: 0.5rem;
+  }
+  
+  .HomeText p {
+    font-size: var(--font-xs);  /* Starting from extra small on mobile */
+  }
+  
+  .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #797878;
+    border-radius: 50%;
+    margin: 0 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .HomeImageWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
   }
   
   .HomeImage {
-    width: 100px;
-    height: 100px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    margin-left: 4rem;
+  }
+  
+  .HomeImage img {
+    width: 180px;
+    border-radius: 20%;
+    height: auto;
+    animation: levitate 3s infinite ease-in-out;
+  }
+  
+  /* ========================
+     ORBIT CONTAINER
+     ======================== */
+  .OrbitContainer {
+    position: relative;
+    width: 240px;
+    height: 240px;
+    left: auto;
+    top: auto;
+    transform-origin: center;
+    animation: levitate 3s infinite ease-in-out;
+    z-index: 1;
+    /* margin-bottom: 2rem; */
+  }
+  
+  .OrbitImages {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -16.5rem;
+    left: 0;
+    animation: orbit 15s linear infinite;
   }
   
   .OrbitImage {
-    width: 40px;
-    height: 40px;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: var(--transition-standard);
   }
-}
-
-.HomeText button {
+  
+  .OrbitImage:hover {
+    transform: translate(-50%, -50%) scale(1.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Positioning for orbit items */
+  .orbit-1 { top: 0%; left: 50%; }
+  .orbit-2 { top: 14.6%; left: 85.4%; }
+  .orbit-3 { top: 50%; left: 100%; }
+  .orbit-4 { top: 85.4%; left: 85.4%; }
+  .orbit-5 { top: 100%; left: 50%; }
+  .orbit-6 { top: 85.4%; left: 14.6%; }
+  .orbit-7 { top: 50%; left: 0%; }
+  .orbit-8 { top: 14.6%; left: 14.6%; }
+  
+  /* ========================
+     BUTTONS
+     ======================== */
+  .HomeText button {
     background: none;
     border: none;
     padding: 0;
@@ -203,21 +217,20 @@ body {
   .HomeText button a {
     display: inline-block;
     padding: 12px 28px;
-    font-size: 1rem;
+    font-size: var(--font-sm);
     font-weight: 600;
-    color: #333;
+    color: var(--primary-color);
     text-decoration: none;
     letter-spacing: 1px;
-    border: 2px solid #333;
+    border: 2px solid var(--primary-color);
     border-radius: 4px;
     background-color: transparent;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: var(--transition-smooth);
     position: relative;
     z-index: 1;
     overflow: hidden;
   }
   
-  /* Black background effect on hover */
   .HomeText button a:before {
     content: "";
     position: absolute;
@@ -225,10 +238,10 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #333;
+    background-color: var(--primary-color);
     transform: scaleX(0);
     transform-origin: right;
-    transition: transform 0.4s cubic-bezier(0.7, 0, 0.3, 1);
+    transition: var(--transition-dramatic);
     z-index: -1;
   }
   
@@ -243,291 +256,21 @@ body {
     transform-origin: left;
   }
   
-  /* Active/clicked state */
   .HomeText button a:active {
     transform: translateY(1px);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   }
-
-.vertical {
-    position: absolute;
-    left: -10rem; 
-    top: 85%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transform: translateY(-50%);
-}
-.vertical hr {
-    width: 2px;
-    height: 50px; 
-    background-color: #999;
-    border: none;
-}
-.vertical span {
-    writing-mode:sideways-lr; 
-    text-align: center;
-    font-size: 16px;
-    font-weight: normal;
-    color: #666;
-    margin-top: 10px; 
-}
-
-.Scroll {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-.Scroll p {
-    margin-top: -55px;
-  animation: bounceFade 3s infinite ease-in-out;
-  font-size: 24px;
-}
-@keyframes bounceFade {
-    0% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-    50% {
-      transform: translateY(-10px);
-      opacity: 0.5;
-    }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
   
-  
-.Scroll hr {
-    width: 2px;
-    height: 180px; 
-    background-color: #999;
-    border: none;
-}
-.Scroll hr:nth-child(2) {
-    width: 2px;
-    height: 50px; 
-    background-color: #999;
-    border: none;
-}
-
-/* Global Reset */
-body {
-    font-family: "Poppins", sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #f9f9f9;
-    color: #333;
-  }
-  
-  /* Portfolio Container */
-  .Portfolio {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 40px 20px;
-  }
-  
-  /* Projects Section */
-  .Projects {
-    text-align: center;
-    margin-bottom: 50px;
-  }
-  
-  .Projects h1 {
-    font-size: 32px;
-    font-weight: 700;
-    color: #222;
-  }
-  
-  .Projects p {
-    font-size: 18px;
-    color: #555;
-  }
-  
-  
- 
-/* Large desktop breakpoint */
-@media (max-width: 1500px) {
-  .Home {
-    overflow-x: hidden; 
-    gap: 15rem;
-  }
-  
-  .OrbitContainer {
-    width: 600px;
-    height: 600px;
-    top: 2%;
-    left: 50%;
-  }
-  
-  .HomeImage {
-  }
-  
-  .HomeImage img {
-    width: 350px;
-    margin-right: -5rem;
-  }
-}
-
-/* Medium desktop breakpoint */
-@media (max-width: 1300px) {
-  .Home {
-    gap: 10rem;
-  }
-  
-  .OrbitContainer {
-    width: 550px;
-    height: 550px;
-    top: 20%;
-    left: 50%;
-  }
-  
-  .HomeImage img {
-    width: 330px;
-  }
-}
-
-/* Small desktop breakpoint */
-@media (max-width: 1100px) {
-  .Homepage {
-    margin-top: 0;
-    overflow-x: hidden; /* Prevent horizontal scroll */
-  }
-  
-  .Home {
-    gap: 6rem;
-    padding: 0 2rem;
-    width: 100%;
-    overflow-x: hidden;
-  }
-  
-  .OrbitContainer {
-    width: 500px;
-    height: 500px;
-    top: 20%;
-    left: 50%;
-  }
-  
-  .HomeImage {
-    margin-right: -2rem;
-  }
-  
-  .HomeImage img {
-    width: 300px;
-  }
-  
-  .vertical {
-    left: -3rem;
-  }
-}
-
-/* Tablet breakpoint */
-@media (max-width: 1024px) {
-  .Homepage {
-    margin-top: 2.5rem;
-    overflow-x: hidden;
-  }
-  .Home {
-    flex-direction: column-reverse;
-    gap: 5rem;
-    /* padding: 0 2rem;
-    overflow: hidden; */
-  }
-
-  .OrbitContainer {
-    width: 450px;
-    height: 450px;
-    top: 3.5%;
-    left: 30%;
-  }
- 
-  .HomeImage {
-    margin-right: -2rem;
-  }
-  
-  .HomeImage img {
-    width: 290px;
-  }
-  
-  .HomeText {
-    font-size: 24px;
-  }
-  
-  .vertical {
-    display: none;
-  }
-}
-
-/* Between tablet and mobile breakpoint */
-@media (max-width: 900px) {
-  .Home {
-    gap: 3rem;
-  }
-  
-  .OrbitContainer {
-    width: 400px;
-    height: 400px;
-  }
-  
-  .HomeImage {
-    margin-right: -1rem;
-  }
-  
-  .HomeImage img {
-    width: 270px;
-  }
-  
-}
-
-/* Small tablet/Large mobile breakpoint */
-@media (max-width: 768px) {
-  .Home {
-    flex-direction: column-reverse;
-    gap: 3rem;
-    height: auto;
-    padding: 8rem 2rem;
-  }
-  
-  .HomeImageWrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-  
-  .HomeImage {
-    margin-right: 0;
-    margin-bottom: 0;
-  }
-  
-  .HomeImage img {
-    width: 250px;
-  }
-  
-  .OrbitContainer {
-    position: relative;
-    width: 350px;
-    height: 350px;
-    left: auto;
-    top: auto;
-    /* margin-top: -200px; */
-    margin-bottom: 2rem;
-  }
-  
-  .HomeText {
-    text-align: center;
-    width: 100%;
-    font-size: 22px;
-  }
-  
+  /* ========================
+     VERTICAL ELEMENT
+     ======================== */
   .vertical {
     position: static;
     transform: none;
     flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-top: 2rem;
     margin-bottom: 1rem;
   }
@@ -535,97 +278,473 @@ body {
   .vertical hr {
     width: 50px;
     height: 2px;
+    background-color: var(--medium-gray);
+    border: none;
     margin: 0 10px;
   }
   
   .vertical span {
     writing-mode: horizontal-tb;
+    text-align: center;
+    font-size: var(--font-sm);
+    font-weight: normal;
+    color: var(--dark-gray);
     margin-top: 0;
   }
   
+  /* ========================
+     SCROLL INDICATOR
+     ======================== */
   .Scroll {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
     margin-top: 2rem;
   }
   
-  .OrbitImage {
-    width: 40px;
-    height: 40px;
-  }
-}
-
-/* Mobile breakpoint */
-@media (max-width: 480px) {
-  .Home {
-    padding: 6rem 1rem;
-    gap: 1rem;
-  }
-  
-  .HomeImage img {
-    width: 200px;
-  }
-  
-  .OrbitContainer {
-    width: 280px;
-    height: 280px;
-    margin-top: -150px;
-  }
-  
-  .HomeText {
-    font-size: 18px;
-  }
-  
-  .HomeText h1 {
-    font-size: 28px;
-    margin-bottom: 0.5rem;
-  }
-  
-  .HomeText p {
-    font-size: 16px;
-  }
-  
-  .OrbitImage {
-    width: 30px;
-    height: 30px;
-  }
-  
-  .Projects h1 {
-    font-size: 24px;
-  }
-  
-  .Projects p {
-    font-size: 16px;
+  .Scroll p {
+    margin-top: -55px;
+    animation: bounceFade 3s infinite ease-in-out;
+    font-size: var(--font-md);
   }
   
   .Scroll hr {
+    width: 2px;
     height: 100px;
+    background-color: var(--medium-gray);
+    border: none;
   }
   
-  .Scroll p {
-    font-size: 18px;
+  .Scroll hr:nth-child(2) {
+    width: 2px;
+    height: 50px;
+    background-color: var(--medium-gray);
+    border: none;
   }
-}
+  
+  /* ========================
+     PORTFOLIO SECTION
+     ======================== */
+  .Portfolio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+  }
+  
+  .Projects {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .Projects h1 {
+    font-size: var(--font-lg);
+    font-weight: 700;
+    color: #222;
+  }
+  
+  .Projects p {
+    font-size: var(--font-sm);
+    color: #555;
+  }
+  
+  /* ========================
+     RESPONSIVE BREAKPOINTS - MOBILE FIRST
+     ======================== */
+  
+  /* Small mobile (480px) */
+  @media (min-width: 480px) {
+    .Home {
+      padding: 6rem 1rem;
+      gap: 1rem;
+    }
+    
+    .HomeImage img {
+      width: 200px;
+    }
+    
+    .OrbitContainer {
+      width: 280px;
+      height: 280px;
+      margin-top: -150px;
+    }
+    
+    .HomeText {
+      margin-top: -4rem;
+      font-size: var(--font-md);  /* Increased font size for small mobile */
+    }
+    
+    .HomeText h1 {
+      font-size: var(--font-xl);  /* Increased font size for small mobile */
+    }
+    
+    .HomeText p {
+      font-size: var(--font-sm);  /* Increased font size for small mobile */
+    }
+    .OrbitImages {
+      top: -10rem;
+      left: 0;
+    }
+    .OrbitImage {
+      width: 30px;
+      height: 30px;
+    }
+    
+    .Projects h1 {
+      font-size: var(--font-lg);
+    }
+    
+    .Scroll p {
+      font-size: var(--font-md);
+    }
+  }
+  
+  /* Small tablet (768px) */
+  @media (min-width: 768px) {
+    .Home {
+      gap: 3rem;
+      height: auto;
+      padding: 8rem 2rem;
+    }
+    
+    .HomeImageWrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      margin-top: -5rem;
+    }
+    
+    .HomeImage img {
+      width: 250px;
+    }
+    
+    .OrbitContainer {
+      width: 400px;
+      height: 400px;
+      margin-bottom: 2rem;
+    }
+    
+    .HomeText {
+      font-size: var(--font-lg);  /* Larger font size for tablets */
+      margin-top: -15rem;
+    }
+    
+    .HomeText h1 {
+      font-size: var(--font-xl);  /* Larger heading size for tablets */
+    }
+    
+    .HomeText p {
+      font-size: var(--font-md);  /* Larger paragraph size for tablets */
+    }
+    
+    .OrbitImages {
+      top: -15rem;
+      left: 0;
+    }
+    .OrbitImage {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  
+  /* Medium tablet (900px) */
+  @media (min-width: 900px) {
+    .Home {
+      gap: 3rem;
+    }
+    .HomeImage {
+      margin-right: -1rem;
+    }
+    
+    .HomeImage img {
+      width: 300px;
+    }
+    
+    .HomeText {
+      /* margin-left: 5rem; */
 
-/* Very small devices */
-@media (max-width: 360px) {
-  .OrbitContainer {
-    width: 240px;
-    height: 240px;
+    }
+    .HomeText h1 {
+      font-size: var(--font-xxl);  /* Even larger heading for medium tablets */
+    }
+    
+    .OrbitImages {
+      top: -20rem;
+      left: 0;
+    }
+    .OrbitContainer {
+      width: 450px;
+      height: 450px;
+    }
   }
   
-  .HomeImage img {
-    width: 180px;
+  /* Large tablet (1024px) */
+  @media (min-width: 1024px) {
+    .Homepage {
+      margin-top: 2.5rem;
+    }
+    
+    .Home {
+      flex-direction: row;
+      gap: 5rem;
+      height: 100vh;
+      margin-top: -15rem;
+      margin-bottom: -10rem;
+    }
+    
+    .HomeText {
+      text-align: left;
+      font-size: var(--font-lg);  /* Consistent font sizing for desktop */
+      margin-top: -5rem;
+      margin-left: 5rem;
+    }
+    
+    .HomeText h1 {
+      font-size: var(--font-xxl);  /* Large heading for desktop */
+    }
+    
+    .HomeText p {
+      font-size: var(--font-xl);  /* Consistent paragraph size */
+    }
+    
+    .OrbitImages {
+      top: 17rem;
+      left: 0;
+    }
+    .OrbitContainer {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      top: 4%;
+      left: 55%;
+    }
+    
+    .HomeImage {
+      margin-right: 1rem;
+    }
+    
+    .HomeImage img {
+      width: 290px;
+    }
+    
+    /* Vertical element begins to show but is hidden initially */
+    .vertical {
+      position: absolute;
+      left: -5rem;
+      top: 85%;
+      display: flex;
+      flex-direction: column;
+      transform: translateY(-50%);
+      /* display: none; */
+    }
+    
+    .vertical hr {
+      width: 2px;
+      height: 50px;
+      margin: 0;
+    }
+    
+    .vertical span {
+      writing-mode: sideways-lr;
+      margin-top: 10px;
+      font-size: var(--font-sm);
+    }
   }
   
-  .OrbitImage {
-    width: 25px;
-    height: 25px;
+  /* Small desktop (1100px) */
+  @media (min-width: 1100px) {
+    .Homepage {
+      margin-top: 0;
+    }
+    
+    .Home {
+      gap: 6rem;
+      padding: 0 2rem;
+      width: 100%;
+      margin-bottom: 8rem;
+    }
+    
+    .HomeText {
+      margin-top: 17rem;
+      margin-left: 8rem;
+      font-size: var(--font-xl);  /* Larger font size for small desktop */
+    }
+    
+    .HomeText h1 {
+      font-size: var(--font-xxxl);  /* Larger heading for desktop */
+    }
+    
+    .HomeText p {
+      font-size: var(--font-lg);  /* Larger paragraph for desktop */
+    }
+    
+    .OrbitImages {
+      top: -8rem;
+      left: 7rem;
+    }
+    .OrbitContainer {
+      width: 450px;
+      height: 450px;
+      top: 21%;
+      left: 45%;
+    }
+    
+    .HomeImage {
+      margin-right: 5rem;
+      margin-bottom: -20em;
+    }
+    
+    .HomeImage img {
+      width: 300px;
+    }
+    
+    /* Make vertical visible */
+    .vertical {
+      display: block;
+      left: -3rem;
+    }
   }
   
-  .HomeText h1 {
-    font-size: 24px;
+  /* Medium desktop (1300px) */
+  @media (min-width: 1300px) {
+    .Home {
+      margin-top: -2rem;
+      gap: 10rem;
+    }
+    
+    .HomeText {
+      margin-top: -10rem;      
+      margin-left: 10rem;
+      font-size: var(--font-xl);  /* Consistent larger font for medium desktop */
+    }
+    
+    .HomeText h1 {
+      font-size: var(--font-xxxl);  /* Extra large heading for medium desktop */
+    }
+    
+    .HomeText p {
+      font-size: var(--font-lg);  /* Large paragraph for medium desktop */
+    }
+    
+    .OrbitContainer {
+      width: 520px;
+      height: 520px;
+      top: 20%;
+      left: 50%;
+    }
+    .OrbitImages {
+      top: -10em;
+      left: 7rem;
+    }
+    
+    .HomeImage {
+      margin-top: -20rem;
+    }
+    .HomeImage img {
+      width: 330px;
+    }
+    
+    /* Ensure vertical stays visible */
+    .vertical {
+      display: block;
+      left: -5rem;
+    }
   }
   
-  .HomeText p {
-    font-size: 14px;
+  /* Large desktop (1500px) */
+  @media (min-width: 1500px) {
+    .Homepage {
+      margin-top: -5rem;
+    }
+    
+    .Home {
+      gap: 15rem;
+    }
+    
+    .HomeText {
+      margin-left: 15rem;
+      margin-top: 5rem;
+      font-size: var(--font-xxl);  /* Extra large font for large desktop */
+    }
+    
+    .HomeText h1 {
+
+      font-size: calc(var(--font-xxxl) * 1.2);  /* Very large heading for large desktop */
+    }
+    
+    .HomeText p {
+      font-size: var(--font-xl);  /* Extra large paragraph for large desktop */
+    }
+    
+    .OrbitContainer {
+      width: 600px;
+      height: 600px;
+      top: 20%;
+      left: 50%;
+    }
+    .OrbitImages {
+      top:-10rem;
+      left: 7rem;
+    }
+    
+    .HomeImage img {
+      width: 350px;
+      margin-right: 8rem;
+      margin-top: 8rem;
+    }
+    
+    /* Make vertical clearly visible */
+    .vertical {
+      display: block;
+      left: -10rem;
+    }
   }
-}
+  
+  /* Extra Large desktop */
+  @media (min-width: 1800px) {
+    .Home {
+      gap: 25rem;
+    }
+    
+    .HomeText {
+      margin-left: 10rem;
+      font-size: calc(var(--font-xxl) * 1.2);  /* Largest font size for extra large screens */
+    }
+    
+    .HomeText h1 {
+      font-size: calc(var(--font-xxxl) * 1.5);  /* Largest heading for extra large screens */
+    }
+    
+    .HomeText p {
+      font-size: calc(var(--font-xl) * 1.2);  /* Largest paragraph for extra large screens */
+    }
+    
+    .OrbitContainer {
+      width: 650px;
+      height: 650px;
+      top: 20%;
+      left: 50%;
+    }
+    
+    .HomeImage {
+      
+    }
+    .HomeImage img {
+      width: 400px;
+      margin-left: -10rem;
+
+    }
+    .HomeText {
+    }
+    /* Ensure vertical stays visible with increased size */
+    .vertical {
+      display: block;
+      left: -5rem;
+    }
+    
+    .vertical span {
+      font-size: var(--font-md);  /* Larger font for vertical text on largest screens */
+    }
+  }
