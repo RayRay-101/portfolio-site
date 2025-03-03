@@ -1,11 +1,9 @@
-/* ========================
-   VARIABLES & BASE STYLES
-   ======================== */
+
    :root {
     /* Colors */
     --primary-color: #333;
     --accent-color: #0066cc;
-    --bg-color: #fafafa;
+    /* --bg-color: #fafafa; */
     --text-color: #333;
     --light-gray: #e0e0e0;
     --medium-gray: #999;
@@ -34,13 +32,13 @@
     --spacing-xl: 5rem;
     
     /* Font Sizes */
-    --font-xs: 0.875rem;    /* 14px */
-    --font-sm: 1rem;        /* 16px */
-    --font-md: 1.125rem;    /* 18px */
-    --font-lg: 1.5rem;      /* 24px */
-    --font-xl: 1.75rem;     /* 28px */
-    --font-xxl: 2rem;       /* 32px */
-    --font-xxxl: 2.5rem;    /* 40px */
+    --font-xs: 0.875rem;    
+    --font-sm: 1rem;        
+    --font-md: 1.125rem;    
+    --font-lg: 1.5rem;      
+    --font-xl: 1.75rem;     
+    --font-xxl: 2rem;       
+    --font-xxxl: 2.5rem;    
   }
   
   body {
@@ -53,9 +51,6 @@
     font-size: var(--font-sm);
   }
   
-  /* ========================
-     ANIMATIONS
-     ======================== */
   @keyframes levitate {
     0% { transform: translateY(0); }
     50% { transform: translateY(-20px); }
@@ -73,9 +68,6 @@
     100% { transform: rotate(360deg); }
   }
   
-  /* ========================
-     HOMEPAGE & HERO SECTION
-     ======================== */
   .Homepage {
     margin-top: 0;
     overflow-x: hidden;
@@ -90,7 +82,7 @@
     gap: 1rem;
     height: auto;
     padding: 6rem 1rem;
-    background-color: #f8f9fa;
+    /* background-color: #f8f9fa; */
     color: var(--primary-color);
     overflow-x: hidden;
     overflow-y: hidden;
@@ -99,7 +91,7 @@
   .HomeText {
     text-align: center;
     width: 100%;
-    font-size: var(--font-sm);  /* Starting from smaller font size on mobile */
+    font-size: var(--font-sm);  
     font-weight: bold;
     color: var(--primary-color);
     position: relative;
@@ -107,12 +99,12 @@
   }
   
   .HomeText h1 {
-    font-size: var(--font-lg);  /* Starting from medium size on mobile */
+    font-size: var(--font-lg);  
     margin-bottom: 0.5rem;
   }
   
   .HomeText p {
-    font-size: var(--font-xs);  /* Starting from extra small on mobile */
+    font-size: var(--font-xs);  
   }
   
   .dot {
@@ -149,9 +141,6 @@
     animation: levitate 3s infinite ease-in-out;
   }
   
-  /* ========================
-     ORBIT CONTAINER
-     ======================== */
   .OrbitContainer {
     position: relative;
     width: 240px;
@@ -197,9 +186,7 @@
   .orbit-7 { top: 50%; left: 0%; }
   .orbit-8 { top: 14.6%; left: 14.6%; }
   
-  /* ========================
-     BUTTONS
-     ======================== */
+
   .HomeText button {
     background: none;
     border: none;
@@ -238,32 +225,47 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--primary-color);
-    transform: scaleX(0);
+    transform: translateY(-2px);
     transform-origin: right;
     transition: var(--transition-dramatic);
     z-index: -1;
   }
   
-  .HomeText button a:hover {
-    color: white;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    transform: translateY(-2px);
-  }
+  .HomeText button::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease-out;
+}
+.HomeText button:hover {
+  color: white;
+  text-decoration: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+.HomeText button a:hover {
+  color: white;
   
-  .HomeText button a:hover:before {
+}
+
+.HomeText button:hover::after {
     transform: scaleX(1);
     transform-origin: left;
-  }
+}
   
   .HomeText button a:active {
     transform: translateY(1px);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    
   }
   
-  /* ========================
-     VERTICAL ELEMENT
-     ======================== */
   .vertical {
     position: static;
     transform: none;
@@ -432,11 +434,11 @@
     }
     
     .HomeText h1 {
-      font-size: var(--font-xl);  /* Larger heading size for tablets */
+      font-size: var(--font-xxxl);  /* Larger heading size for tablets */
     }
     
     .HomeText p {
-      font-size: var(--font-md);  /* Larger paragraph size for tablets */
+      font-size: var(--font-xl);  /* Larger paragraph size for tablets */
     }
     
     .OrbitImages {
@@ -467,7 +469,10 @@
 
     }
     .HomeText h1 {
-      font-size: var(--font-xxl);  /* Even larger heading for medium tablets */
+      font-size: var(--font-xxxl); 
+    }
+    .Projects h1 {
+      font-size: var(--font-xxl);  
     }
     
     .OrbitImages {
@@ -611,6 +616,7 @@
   @media (min-width: 1300px) {
     .Home {
       margin-top: -2rem;
+      margin-bottom: -5rem;
       gap: 10rem;
     }
     
@@ -657,9 +663,11 @@
   @media (min-width: 1500px) {
     .Homepage {
       margin-top: -5rem;
+      
     }
     
     .Home {
+      margin-bottom: -1rem;
       gap: 15rem;
     }
     
@@ -716,6 +724,9 @@
     .HomeText h1 {
       font-size: calc(var(--font-xxxl) * 1.5);  /* Largest heading for extra large screens */
     }
+    .Projects h1 {
+      font-size: var(--font-xxl * 1.2);  
+    }
     
     .HomeText p {
       font-size: calc(var(--font-xl) * 1.2);  /* Largest paragraph for extra large screens */
@@ -733,7 +744,7 @@
     }
     .HomeImage img {
       width: 400px;
-      margin-left: -10rem;
+      margin-left: -5rem;
 
     }
     .HomeText {

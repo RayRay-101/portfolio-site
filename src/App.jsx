@@ -10,6 +10,7 @@ import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
 import BubbleAnimation from "./components/BubbleAnimation"
 
+import stars from './assets/stars.png'
 
 const App = () => {
   return (

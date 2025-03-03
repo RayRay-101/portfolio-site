@@ -18,7 +18,7 @@
 }
 .aboutupper .myself {
     margin-left: 7rem;
-    margin-bottom: -10rem;
+    margin-bottom: -5rem;
     width:70%;
 }
 .aboutupper h1:first-child {
@@ -74,7 +74,7 @@
     }
   
   .aboutupper button::before {
-      display: none; /* Remove the underline effect for resume */
+      display: none;
     }
     
     .aboutupper button:hover {

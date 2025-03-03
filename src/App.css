@@ -1,0 +1,9 @@
+body {
+    background-image: url('../assets/stars.png');
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    -webkit-filter: grayscale(100%); 
+    filter: grayscale(100%);
+  }
