@@ -8,7 +8,7 @@ import Projects from './components/Projects'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
-import BubbleAnimation from "./components/BubbleAnimation"
+import Background from "./components/Background"
 
 import stars from './assets/stars.png'
 
@@ -19,7 +19,7 @@ const App = () => {
           <ScrollToTop />
 
         <Navbar />
-        <BubbleAnimation />
+        <Background />
 
         <Routes>
           <Route path="/" element={<Home />} />
