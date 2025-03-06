@@ -1,15 +1,22 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
 
-// https://vite.dev/config/
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+
 export default defineConfig({
   plugins: [react()],
   build: {
     rollupOptions: {
-      external: ['@emailjs/browser']
+      external: ['@emailjs/browser'],
+      output: {
+        globals: {
+          '@emailjs/browser': 'emailjs'
+        }
+      }
     }
   },
-  optimizeDeps: {
-    include: ['@emailjs/browser']
+  resolve: {
+    alias: {
+      '@': '/src'
+    }
   }
-})
+});
