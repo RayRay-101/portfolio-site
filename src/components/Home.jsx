@@ -7,7 +7,7 @@ import javascript from "../assets/javascript.png"
 import typescript from "../assets/typescript.png"
 import node from "../assets/node.png"
 import mongo from "../assets/mongo.png"
-import redux from "../assets/redux.png"
+import redux from "../assets/Redux.png"
 import express from "../assets/express.png"
 import Projects from './Projects'
 // import BubbleAnimation from "./components/BubbleAnimation.jsx"
