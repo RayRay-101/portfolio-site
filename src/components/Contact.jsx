@@ -1,6 +1,6 @@
 import React,{ useRef } from 'react'
 import "../styles/Contact.css"
-import emailjs from '@emailjs/browser';
+// import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const form = useRef();
