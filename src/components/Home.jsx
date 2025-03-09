@@ -10,12 +10,10 @@ import mongo from "../assets/mongo.png"
 import redux from "../assets/Redux.png"
 import express from "../assets/express.png"
 import Projects from './Projects'
-// import BubbleAnimation from "./components/BubbleAnimation.jsx"
 
 const Home = () => {
   return (
     <div className='Homepage'>
-      {/* <BubbleAnimation /> */}
 
       <div className='Home'>
         <div className='HomeText'>

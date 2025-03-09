@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import "../styles/About.css"
-import austin from "../assets/austin.jpeg"
+import raymond from "../assets/raymond.jpg"
 
 
 const About = () => {
@@ -27,7 +27,7 @@ const About = () => {
 
 
       <div className='aboutlower'>
-        <img src={austin} alt="mypic" />
+        <img src={raymond} alt="mypic" />
 
         <div className='skills'>
           <h1>What I use <span className="dot"></span><span className="dot"></span><span className="dot"></span></h1>
